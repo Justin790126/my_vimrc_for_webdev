@@ -28,6 +28,7 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'othree/html5.vim'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'lrvick/Conque-Shell'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
