@@ -28,6 +28,7 @@ Plugin 'maksimr/vim-jsbeautify'
 Plugin 'ternjs/tern_for_vim'
 Plugin 'othree/html5.vim'
 Plugin 'tikhomirov/vim-glsl'
+Plugin 'lrvick/Conque-Shell'
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -146,3 +147,8 @@ let g:html5_event_handler_attributes_complete = 1
 let g:html5_rdfa_attributes_complete = 1
 let g:html5_microdata_attributes_complete = 1
 let g:html5_aria_attributes_complete = 1
+
+" Plugin 'lrvick/Conque-Shell'
+nmap <leader>b :ConqueTermSplit bash<CR>
+nmap <leader>vb :ConqueTermVSplit bash<CR>
+
