@@ -8,17 +8,27 @@
 
 ## Installation guide
 
-  * Run shell script [MyPkg] with root.
-  * Install [Vundle].
-  * Copy [Vimrc] to home directory (~/.)
-  * Install [YCM] with Terminal command:
-      ./install.py --clang-completer --tern-completer
-  * In Terminal, run:
-      vim +PluginInstall
-  * In ~/.vim/bundle/tern_for_vim
-      sudo npm install tern
-  * Restart computer:
-      sudo reboot
+   * Run shell script [MyPkg] with root.
+   
+   * Install [Vundle].
+   
+   * Copy [Vimrc] to home directory (~/.)
+   
+   * Install [YCM] with Terminal command:
+           
+          ./install.py --clang-completer --tern-completer
+      
+   * In Terminal, run:
+   
+          vim +PluginInstall
+      
+   * In ~/.vim/bundle/tern_for_vim
+   
+          sudo npm install tern
+      
+   * Restart computer:
+   
+          sudo reboot
 
 
 [MyPkg]:https://github.com/Justin790126/MyPkg/blob/master/mypkg.sh
