@@ -12,13 +12,13 @@
   * Install [Vundle].
   * Copy [Vimrc] to home directory (~/.)
   * Install [YCM] with Terminal command:
-        ./install.py --clang-completer --tern-completer
+      ./install.py --clang-completer --tern-completer
   * In Terminal, run:
-        vim +PluginInstall
+      vim +PluginInstall
   * In ~/.vim/bundle/tern_for_vim
-        sudo npm install tern
+      sudo npm install tern
   * Restart computer:
-        sudo reboot
+      sudo reboot
 
 
 [MyPkg]:https://github.com/Justin790126/MyPkg/blob/master/mypkg.sh
