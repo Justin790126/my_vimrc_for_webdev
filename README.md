@@ -9,5 +9,9 @@
 ## Installation guide
 
   * Run shell script [MyPkg] with root.
+  * 
 
   
+
+
+[MyPkg]:https://github.com/Justin790126/MyPkg/blob/master/mypkg.sh
