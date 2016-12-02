@@ -1,4 +1,4 @@
-# my_vimrc_for_webdev
+# Vim web-develop editor
 
 ## Requirement
   
@@ -8,7 +8,9 @@
 
 ## Installation guide
 
-   * Run shell script [MyPkg] with root.
+   * Run shell script to install packages:
+
+          bash ./mypkg.sh
    
    * Install [Vundle].
    
@@ -22,8 +24,10 @@
    
           vim +PluginInstall
       
-   * In ~/.vim/bundle/tern_for_vim
-   
+   * Install tern to bundle:
+
+          cd ~/.vim/bundle/tern_for_vim
+
           sudo npm install tern
       
    * Restart computer:
@@ -31,7 +35,6 @@
           sudo reboot
 
 
-[MyPkg]:https://github.com/Justin790126/MyPkg/blob/master/mypkg.sh
 [Vundle]:https://github.com/VundleVim/Vundle.vim
 [Vimrc]:https://github.com/Justin790126/my_vimrc_for_webdev/blob/master/.vimrc
 [YCM]:https://github.com/Valloric/YouCompleteMe#ubuntu-linux-x64
