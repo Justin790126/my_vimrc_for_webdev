@@ -125,6 +125,7 @@ autocmd FileType javascript set foldmethod=syntax
 autocmd FileType html set foldmethod=indent
 
 " jsbeautify
+let g:editorconfig_Beautifier="~/.editorconfig"
 map <c-f> :call JsBeautify()<cr>
 autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
 autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
