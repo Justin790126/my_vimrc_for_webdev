@@ -148,3 +148,4 @@ nmap <leader>b :ConqueTermSplit bash<CR>
 nmap <leader>vb :ConqueTermVSplit bash<CR>
 
 set colorcolumn=80
+set expandtab
