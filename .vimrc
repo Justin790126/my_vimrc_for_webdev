@@ -15,13 +15,10 @@ Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
 Plugin 'honza/vim-snippets'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-surround'
-Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
 Plugin 'maksimr/vim-jsbeautify'
@@ -105,9 +102,6 @@ let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
 " YCM
 let g:ycm_key_invoke_completion = '<C-a>'
 
-" CtrlP
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
 
 " NerdTree
 map <leader>e :NERDTreeFind<CR>
@@ -152,3 +146,4 @@ let g:html5_aria_attributes_complete = 1
 nmap <leader>b :ConqueTermSplit bash<CR>
 nmap <leader>vb :ConqueTermVSplit bash<CR>
 
+set colorcolumn=80
