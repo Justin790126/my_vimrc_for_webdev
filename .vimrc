@@ -26,6 +26,7 @@ Plugin 'ternjs/tern_for_vim'
 Plugin 'othree/html5.vim'
 Plugin 'tikhomirov/vim-glsl'
 Plugin 'lrvick/Conque-Shell'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
@@ -147,5 +148,13 @@ let g:html5_aria_attributes_complete = 1
 nmap <leader>b :ConqueTermSplit bash<CR>
 nmap <leader>vb :ConqueTermVSplit bash<CR>
 
+set ts=2
+set sw=2
+set cursorline
+set nu
+set background=dark
+set ignorecase
+set mouse=a
 set colorcolumn=80
 set expandtab
+
