@@ -59,6 +59,7 @@
 | Search and confirm replace | :%s/Text/ReplaceText/gc |
 | Comment selected line| \cc |
 | Uncomment selected line | \cu |
+| Tab shift | Esc, >> or << |
 
 
 
