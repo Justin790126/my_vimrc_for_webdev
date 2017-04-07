@@ -9,25 +9,78 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'delimitMate.vim'
-Plugin 'docunext/closetag.vim'
-Plugin 'MarcWeber/vim-addon-mw-utils'
-Plugin 'tomtom/tlib_vim'
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets' "optional"
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'Valloric/MatchTagAlways'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-surround'
-Plugin 'scrooloose/nerdtree'
-Plugin 'pangloss/vim-javascript'
-Plugin 'maksimr/vim-jsbeautify'
+
+" You Complete me dependency
+Plugin 'ternjs/tern'
+
+" For js function jumping
 Plugin 'ternjs/tern_for_vim'
-Plugin 'lrvick/Conque-Shell'
+let g:tern_show_argument_hints='on_hold'
+let g:tern_map_keys=1
+
+" React syntax highlight
+Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+let g:jsx_ext_required = 0
+
+" Auto close html tag
+Plugin 'alvan/vim-closetag'
+" filenames like *.xml, *.html, *.xhtml, ...
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.js,*.jsx"
+
+" React snippets
 Plugin 'SirVer/ultisnips'
 Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
+Plugin 'honza/vim-snippets' "optional"
 
+" Comment plugin
+Plugin 'scrooloose/nerdcommenter'
+let g:NERDSpaceDelims = 1
+let g:NERDCompactSexyComs = 1
+let g:NERDDefaultAlign = 'left'
+let g:NERDAltDelims_java = 1
+let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
+let g:NERDCommentEmptyLines = 1
+let g:NERDTrimTrailingWhitespace = 1
+
+" Open shell in vim
+Plugin 'lrvick/Conque-Shell'
+nmap <leader>b :ConqueTermSplit bash<CR>
+nmap <leader>vb :ConqueTermVSplit bash<CR>
+
+" Auto complete brackets
+Plugin 'Raimondi/delimitMate'
+
+" Js beautify
+Plugin 'maksimr/vim-jsbeautify'
+let g:editorconfig_Beautifier="~/.editorconfig"
+map <c-f> :call JsBeautify()<cr>
+autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
+autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
+autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
+autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
+autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
+
+" Syntax checker
+Plugin 'scrooloose/syntastic'
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+"let g:syntastic_javascript_checkers = ['standard']
+"let g:syntastic_javascript_standard_generic = 1
+let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exec = 'eslint'
+
+" Folding js code
+autocmd FileType javascript set foldmethod=syntax
+autocmd FileType html set foldmethod=indent
+
+" Highligh html tag
+Plugin 'Valloric/MatchTagAlways'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -65,97 +118,12 @@ filetype plugin indent on    " required
 " Put your non-Plugin stuff after this line
 "
 
-" Nerd commenter
-let g:NERDSpaceDelims = 1
-let g:NERDCompactSexyComs = 1
-let g:NERDDefaultAlign = 'left'
-let g:NERDAltDelims_java = 1
-let g:NERDCustomDelimiters = { 'c': { 'left': '/**','right': '*/' } }
-let g:NERDCommentEmptyLines = 1
-let g:NERDTrimTrailingWhitespace = 1
-
-" vim-javascript
-let g:vimjs#casesensistive = 1
-let g:vimjs#smartcomplete = 1
-let g:vimjs#chromeapis = 1
-
-" MatchTagAlways
-let g:mta_use_matchparen_group = 1
-let g:mta_filetypes = {
-    \ 'html' : 1,
-    \ 'xhtml' : 1,
-    \ 'xml' : 1,
-    \ 'jinja' : 1,
-    \}
-
-
-" scrooloose/syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-
-" closetag
-let g:closetag_html_style=1
-let g:closetag_filenames = "*.html,*.xhtml,*.phtml"
-
-" YCM
-let g:ycm_key_invoke_completion = '<C-a>'
-
-
-" NerdTree
-map <leader>e :NERDTreeFind<CR>
-nmap <leader>nt :NERDTreeFind<CR>
-let NERDTreeShowBookmarks=1
-let NERDTreeIgnore=['\.pyc', '\~$', '\.swo$', '\.swp$', '\.git', '\.hg', '\.svn', '\.bzr']
-let NERDTreeChDirMode=0
-let NERDTreeQuitOnOpen=0
-let NERDTreeMouseMode=2
-let NERDTreeShowHidden=1
-let NERDTreeKeepTreeInNewTab=1
-map <leader>l :NERDTreeFind<cr>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
-" pangloss/vim-javascript
-let g:javascript_plugin_jsdoc = 1
-let g:javascript_plugin_ngdoc = 1
-let g:javascript_plugin_flow = 1
-
-autocmd FileType javascript set foldmethod=syntax
-autocmd FileType html set foldmethod=indent
-
-" jsbeautify
-let g:editorconfig_Beautifier="~/.editorconfig"
-map <c-f> :call JsBeautify()<cr>
-autocmd FileType javascript noremap <buffer>  <c-f> :call JsBeautify()<cr>
-autocmd FileType json noremap <buffer> <c-f> :call JsonBeautify()<cr>
-autocmd FileType jsx noremap <buffer> <c-f> :call JsxBeautify()<cr>
-autocmd FileType html noremap <buffer> <c-f> :call HtmlBeautify()<cr>
-autocmd FileType css noremap <buffer> <c-f> :call CSSBeautify()<cr>
-
-" Tern for vim
-let g:tern_show_argument_hints='on_hold'
-let g:tern_map_keys=1
-
-" othree/html5.vim
-let g:html5_event_handler_attributes_complete = 1
-let g:html5_rdfa_attributes_complete = 1
-let g:html5_microdata_attributes_complete = 1
-let g:html5_aria_attributes_complete = 1
-
-" Plugin 'lrvick/Conque-Shell'
-nmap <leader>b :ConqueTermSplit bash<CR>
-nmap <leader>vb :ConqueTermVSplit bash<CR>
-
 set nu
 set colorcolumn=80
 set expandtab
-
-
-" React
-let g:jsx_ext_required = 0
-
-let g:syntastic_javascript_checkers = ['eslint']
+set ts=2
+set sw=2
+set background=dark
+set ignorecase
+set mouse=a
+set cursorline

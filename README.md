@@ -37,6 +37,7 @@
 
 ## Vim User manual
 
+#### Common usage
 
 | Functionality | Hot key |
 | ------ | ------ |
@@ -60,6 +61,15 @@
 | Comment selected line| \cc |
 | Uncomment selected line | \cu |
 | Tab shift | Esc, >> or << |
+
+
+#### React snippets
+
+* In vim insert mode:
+
+| Functionality | Hot key |
+| ------ | ------ |
+| Define & export class | jsx, Tab|
 
 
 
