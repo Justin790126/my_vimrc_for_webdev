@@ -14,7 +14,7 @@ Plugin 'docunext/closetag.vim'
 Plugin 'MarcWeber/vim-addon-mw-utils'
 Plugin 'tomtom/tlib_vim'
 Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+Plugin 'honza/vim-snippets' "optional"
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'scrooloose/syntastic'
@@ -23,9 +23,11 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'pangloss/vim-javascript'
 Plugin 'maksimr/vim-jsbeautify'
 Plugin 'ternjs/tern_for_vim'
-Plugin 'othree/html5.vim'
-Plugin 'tikhomirov/vim-glsl'
 Plugin 'lrvick/Conque-Shell'
+Plugin 'mxw/vim-jsx'
+Plugin 'SirVer/ultisnips'
+Plugin 'letientai299/vim-react-snippets', { 'branch': 'es6' }
+
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -148,13 +150,12 @@ let g:html5_aria_attributes_complete = 1
 nmap <leader>b :ConqueTermSplit bash<CR>
 nmap <leader>vb :ConqueTermVSplit bash<CR>
 
-set ts=2
-set sw=2
-set cursorline
 set nu
-set background=dark
-set ignorecase
-set mouse=a
 set colorcolumn=80
 set expandtab
 
+
+" React
+let g:jsx_ext_required = 0
+
+let g:syntastic_javascript_checkers = ['eslint']
