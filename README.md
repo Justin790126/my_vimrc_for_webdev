@@ -62,7 +62,7 @@
 | Tab shift | Esc, >> or << |
 
 
-
+## [Vim common snippets](https://github.com/honza/vim-snippets/tree/master/snippets/javascript)
 
 [Vundle]:https://github.com/VundleVim/Vundle.vim
 [Vimrc]:https://github.com/Justin790126/my_vimrc_for_webdev/blob/master/.vimrc
