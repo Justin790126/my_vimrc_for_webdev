@@ -82,6 +82,9 @@ autocmd FileType html set foldmethod=indent
 " Highligh html tag
 Plugin 'Valloric/MatchTagAlways'
 
+" Plugin for removing trailing whitespace
+Plugin 'ntpeters/vim-better-whitespace'
+
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
 " plugin on GitHub repo
