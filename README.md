@@ -37,6 +37,7 @@
 
 ## Vim User manual
 
+#### Common usage
 
 | Functionality | Hot key |
 | ------ | ------ |
@@ -63,6 +64,15 @@
 
 
 ## [Vim common snippets](https://github.com/honza/vim-snippets/tree/master/snippets/javascript)
+
+#### React snippets
+
+* In vim insert mode:
+
+| Functionality | Hot key |
+| ------ | ------ |
+| Define & export class | jsx, Tab|
+
 
 [Vundle]:https://github.com/VundleVim/Vundle.vim
 [Vimrc]:https://github.com/Justin790126/my_vimrc_for_webdev/blob/master/.vimrc
